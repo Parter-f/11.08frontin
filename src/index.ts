@@ -79,9 +79,29 @@ interface Hair {
 async function beolvas() {
     let response = await fetch("../users.json");
     let vals : RootObject = await response.json(); 
+    console.log(vals.users)
+
+    vals.users.sort(function (a, b) {
+        if (a.lastName < b.lastName) {
+          return -1;
+        }
+        if (a.lastName > b.lastName) {
+          return 1;
+        }
+        return 0;
+      });
+    console.log(vals.users)
+
+    let szuloElem = document.getElementById('namelist');
+    for(let k of vals.users)
+    {
+        let listaElem = document.createElement('li');
+        listaElem.textContent = k.lastName + " " + k.firstName;
+        szuloElem?.appendChild(listaElem);
+    }
 
     
-       
+  
 }
 
 document.addEventListener('DOMContentLoaded',()=> {
