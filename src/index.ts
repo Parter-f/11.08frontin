@@ -99,8 +99,8 @@ async function beolvas() {
         listaElem.textContent = k.lastName + " " + k.firstName;
         szuloElem?.appendChild(listaElem);
     }
+     
 
-    
   
 }
 
