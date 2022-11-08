@@ -75,3 +75,15 @@ interface Hair {
   color: string;
   type: string;
 }
+
+async function beolvas() {
+    let response = await fetch("../users.json");
+    let vals : RootObject = await response.json(); 
+
+    
+       
+}
+
+document.addEventListener('DOMContentLoaded',()=> {
+    beolvas()
+})
